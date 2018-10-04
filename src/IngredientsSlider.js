@@ -5,6 +5,8 @@ import RightArrow from './RightArrow.js';
 import ham1 from './images/Asset 5.svg';
 import ham2 from './images/Asset 8.svg';
 import ham3 from './images/Asset 10.svg';
+import arrowLeft from './images/glyphicons-211-arrow-left.png';
+
 
 class IngredientsSlider extends Component {
 	constructor(props) {
