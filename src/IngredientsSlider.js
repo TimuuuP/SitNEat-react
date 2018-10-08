@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import Slides from './Slides.js';
 import LeftArrow from './LeftArrow.js';
 import RightArrow from './RightArrow.js';
-import ham1 from './images/Asset 5.svg';
+import ham1 from './images/Asset5.svg';
 import ham2 from './images/Asset 8.svg';
 import ham3 from './images/Asset 10.svg';
 import arrowLeft from './images/glyphicons-211-arrow-left.png';
-
+import './App.css';
 
 class IngredientsSlider extends Component {
+
 	constructor(props) {
 		super(props);
 
@@ -19,10 +20,16 @@ class IngredientsSlider extends Component {
 		};
 	}
 
+
+
 	prevSlide = () => {
-		this.setState(prevState => ({
-			currentIndex: prevState.currentIndex - 1
-		}));
+		if(this.state.currentIndex === 0)
+      return;
+
+    this.setState(prevState => ({
+      currentIndex: prevState.currentIndex - 1,
+      translateValue: prevState.translateValue + this.slideWidth()
+    }));
 	}
 
 	nextSlide = () => {
@@ -46,6 +53,7 @@ class IngredientsSlider extends Component {
 
 		return (
 			<div className="ingredientsSlider" >
+				<LeftArrow prevSlide = {this.prevSlide}/>
 				<div className="sliderWrapper"
 					style={{
 						transform: `translateX(${this.state.translateValue}px)`,
@@ -60,7 +68,7 @@ class IngredientsSlider extends Component {
 					}
 				</div>
 				{/*<img src={ham1} />*/}
-				<LeftArrow prevSlide = {this.prevSlide}/>
+
 				<RightArrow nextSlide = {this.nextSlide}/>
 			</div>
 		);

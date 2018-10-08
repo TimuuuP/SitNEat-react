@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
+import { Media } from 'reactstrap';
+import ham1 from './images/Asset5.svg';
+import './App.css';
+
 
 const Slides = ({ image }) => {
   const styles = {
-    backgroundImage: `url(${image})`,
+    backgroundImage: `url('${image}')`,
     backgroundSize: 'cover',
     backgroundRepeat: `no-repeat`,
-    backgroundPosition: '50% 60%'
+    backgroundPosition: '50% 60%',
+
   }
 
   return (
-    <div className='slides' style={styles}>
-      
-    </div>
+    <Media className="slides" object src={image} width={200} height={200} alt="Generic placeholder image" />
+
+    /*<div className='slides' style={styles} fluid>
+
+    </div>*/
   );
 }
 

@@ -1,5 +1,26 @@
 import React, { Component } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+
+const styles = {
+  root: {
+    flexGrow: 1,
+  },
+  grow: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+  },
+};
+
 
 
 class NavBarCustom extends Component {
@@ -19,26 +40,25 @@ class NavBarCustom extends Component {
     });
   }
 
+
   render () {
+    const { classes } = this.props;
     return (
-      <div>
-        <Navbar  className="navbar-dark bg-dark">
-          <NavbarBrand href="/" className="mr-auto">Sit 'n' Eat</NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-          <Collapse isOpen={!this.state.collapsed} navbar>
-            <Nav navbar>
-              <NavItem>
-                <NavLink href="#">One</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="#">Two</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
+      <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="title" color="inherit" className={classes.grow}>
+            Sit 'n Eat
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+    </div>
     );
   }
 }
 
-export default NavBarCustom;
+export default withStyles(styles)(NavBarCustom);
