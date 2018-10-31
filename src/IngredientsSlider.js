@@ -52,7 +52,7 @@ class IngredientsSlider extends Component {
 	render() {
 
 		return (
-			<div className="ingredientsSlider" >
+			<div className="ingredientsSlider content" >
 				<LeftArrow prevSlide = {this.prevSlide}/>
 				<div className="sliderWrapper"
 					style={{
@@ -65,11 +65,13 @@ class IngredientsSlider extends Component {
 								<Slides image={image} key={i} />
 							)
 						})
+
 					}
 				</div>
 				{/*<img src={ham1} />*/}
 
 				<RightArrow nextSlide = {this.nextSlide}/>
+
 			</div>
 		);
 	}

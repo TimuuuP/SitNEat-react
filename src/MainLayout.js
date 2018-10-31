@@ -4,7 +4,9 @@ import NavBarCustom from './NavBarCustom.js';
 class MainLayout extends Component {
   render () {
     return (
-      <NavBarCustom />
+      <div>
+        <NavBarCustom />
+      </div>
     );
   }
 }

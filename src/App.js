@@ -9,11 +9,14 @@ import MainPage from './MainPage.js';
 import MainLayout from './MainLayout.js';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
+
+
 class App extends Component {
   render() {
     return (
+
       <Router>
-        <div>
+        <div className="mainApp">
         <NavBarCustom />
         <Switch>
           <Route

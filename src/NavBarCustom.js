@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link } from 'react-router-dom';
+
 
 const styles = {
   root: {
@@ -45,15 +47,17 @@ class NavBarCustom extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" style={{background: 'Tomato'}}>
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="title" color="inherit" className={classes.grow}>
+          <Link to="/" style={{textDecoration: "none"}}>
+          <Typography style={{color: '#fff'}} variant="title" className={classes.grow}>
             Sit 'n Eat
           </Typography>
-          <Button color="inherit">Login</Button>
+          </Link>
+
         </Toolbar>
       </AppBar>
     </div>
